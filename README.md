@@ -1,6 +1,6 @@
 ## 🌐 Live Demo
 
-https://your-portfolio-url.vercel.app
+https://kokoefiawoo.netlify.app/
 
 # 💼 Personal Portfolio Website
 
