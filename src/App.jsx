@@ -2,6 +2,8 @@ import { useState } from 'react'
 import heroImage from './assets/hero.png'
 import reactCert from './assets/certificates/react.png';
 import pythonCert from './assets/certificates/pyth.png';
+import otaku from './assets/otakulinkPreview.png';
+import night from './assets/nightPreview.png';
 import pictureMe from './assets/myPicture.png'
 
 import './App.css'
@@ -59,9 +61,9 @@ const projects = [
     title: 'Fruit Drag-and-Drop Game',
     description:
       'Built an interactive fruit sorting game using HTML, CSS, and JavaScript with drag-and-drop interactions and a responsive interface.',
-    // image: projectImage
-    imageLabel: 'Project Image',
-    href: '#',
+    image: night,
+    imageLabel: 'Night Market Rush Project Image',
+    href: 'https://night-market-rush.netlify.app/',
   },
   
   {
@@ -76,17 +78,17 @@ const projects = [
     title: 'Computer Science Department Management System',
     description:
       'Designed a Java-based academic management system with course enrollment, waitlisting, GPA calculation, notifications, and UML-backed architecture.',
-    // image: projectImage
-    imageLabel: 'Project Image',
+    // image: Project Image,
+    imageLabel: 'Computer Science Project Image',
     href: '#',
   },
   {
     title: 'OtakuLink Database Implementation',
     description:
       'Designed and implemented a relational database schema for data storage, retrieval, and application content management using SQL.',
-    // image: projectImage
-    imageLabel: 'Project Image',
-    href: '#',
+    image: otaku,
+    imageLabel: 'OtakuLink Project Image',
+    href: 'https://otaku-link.netlify.app/',
   },
 ]
 
@@ -243,6 +245,26 @@ function CertificatesSection() {
   )
 }
 
+function ProjectsSection() {
+  return (
+    <section id="projects" className="content-section projects-section">
+      <SectionTitle>Projects & Experience</SectionTitle>
+      <div className="project-grid">
+        {projects.map((project) => (
+          <article key={project.title} className="project-card">
+            <a className="project-media" href={project.href} target="_blank" rel="noreferrer">
+               <img src={project.image} alt={project.title}/> 
+              <span>{project.imageLabel}</span>
+            </a>
+            <h3>{project.title}</h3>
+            <p>{project.description}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+  )
+}
+
 function SkillsSection() {
   return (
     <section className="content-section skills-section">
@@ -261,25 +283,6 @@ function SkillsSection() {
   )
 }
 
-function ProjectsSection() {
-  return (
-    <section id="projects" className="content-section projects-section">
-      <SectionTitle>Projects & Experience</SectionTitle>
-      <div className="project-grid">
-        {projects.map((project) => (
-          <article key={project.title} className="project-card">
-            <a className="project-media" href={project.href} target="_blank" rel="noreferrer">
-              {/* <img src={project.image} alt={project.title}/> */}
-              <span>{project.imageLabel}</span>
-            </a>
-            <h3>{project.title}</h3>
-            <p>{project.description}</p>
-          </article>
-        ))}
-      </div>
-    </section>
-  )
-}
 
 function ContactSection() {
   return (

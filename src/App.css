@@ -443,11 +443,23 @@
   text-transform: uppercase;
 }
 
+.project-media img {
+  overflow: hidden;
+  position: relative;
+  padding: 0;
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 16px;
+  display: block;
+}
+
 .certificate-media {
   overflow: hidden;
   position: relative;
   padding: 0;
 }
+
 
 .certificate-media img {
   width: 100%;
