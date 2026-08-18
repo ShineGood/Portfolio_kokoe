@@ -5,7 +5,7 @@ export const projects = [
       'Developed a command-line meal planning application in Python to help users plan weekly meals and discover recipes using file-based recipe instructions and an interactive menu-driven interface.',
     tech: 'Python',
     href: 'https://juko-meal.netlify.app/',
-    image: mealPlannerImage,
+    // image: mealPlannerImage,
   },
 
   {
@@ -14,7 +14,7 @@ export const projects = [
       'Built an interactive fruit sorting game using HTML, CSS, and JavaScript with drag-and-drop interactions and a responsive interface.',
     tech: 'HTML / CSS / JavaScript',
     href: 'https://night-market-rush.netlify.app/',
-    image: nightMarketImage,
+    // image: nightMarketImage,
   },
 
   {
@@ -23,7 +23,7 @@ export const projects = [
       'Created a full-stack React + Python/Flask app that analyzes customer complaints and generates empathetic responses using the Google Gemini API.',
     tech: 'React / Flask',
     href: '#',
-    image: natlangImage,
+    // image: natlangImage,
   },
 
   {
@@ -32,7 +32,7 @@ export const projects = [
       'Designed a Java-based academic management system with course enrollment, waitlisting, GPA calculation, notifications, and UML-backed architecture.',
     tech: 'Java',
     href: '#',
-    image: mealPlannerImage,
+    // image: mealPlannerImage,
   },
 
   {
@@ -41,6 +41,6 @@ export const projects = [
       'Designed and implemented a relational database schema for data storage, retrieval, and application content management using SQL.',
     tech: 'SQL',
     href: 'https://otaku-link.netlify.app/',
-    image: otakuLinkImage,
+    // image: otakuLinkImage,
   },
 ]
