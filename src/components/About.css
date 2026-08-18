@@ -1,0 +1,148 @@
+
+/* ==========================================================================
+   About Section
+   ========================================================================== */
+
+.about {
+  background: linear-gradient(135deg, var(--dark-2), var(--dark-3));
+  padding: 58px 0;
+}
+
+/* ==========================================================================
+   About Grid
+   ========================================================================== */
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 64px;
+  align-items: center;
+}
+
+/* ==========================================================================
+   About Image
+   ========================================================================== */
+
+.about-media {
+  position: relative;
+}
+
+.about-photo {
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+  border-radius: 18px;
+}
+
+/* ==========================================================================
+   Decorative Tape
+   ========================================================================== */
+
+.about-tape {
+  position: absolute;
+  z-index: 2;
+  top: -12px;
+  left: -10px;
+  width: 60px;
+  height: 22px;
+  background: rgba(143, 152, 255, 0.75);
+  transform: rotate(-25deg);
+}
+
+/* ==========================================================================
+   About Content
+   ========================================================================== */
+
+.about-copy {
+  color: var(--cream);
+}
+
+.about-title {
+  font-size: clamp(2.25rem, 4vw, 3.4rem);
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.about-copy p {
+  max-width: 700px;
+  color: #d9deea;
+  line-height: 1.8;
+  margin-bottom: 16px;
+  font-size: 1rem;
+}
+
+.about-copy p:last-child {
+  margin-bottom: 0;
+}
+
+
+/* ==========================================================================
+   🌙 Dark Mode
+   Only changes colors — layout stays the same.
+   ========================================================================== */
+
+.portfolio-shell.dark .about {
+  background: linear-gradient(
+    135deg,
+    #070720,
+    #18162e
+  );
+}
+
+.portfolio-shell.dark .about-tape {
+  background: rgba(109, 85, 247, 0.75);
+}
+
+.portfolio-shell.dark .about-copy {
+  color: #dccfff;
+}
+
+.portfolio-shell.dark .about-title {
+  color: #f8f4ff;
+}
+
+.portfolio-shell.dark .about-copy p {
+  color: #cfc5df;
+}
+
+/* ==========================================================================
+   Mobile
+   ========================================================================== */
+
+@media (max-width: 900px) {
+  .about {
+    padding: 52px 0;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .about-media {
+    order: 2;
+  }
+
+  .about-photo {
+    height: 280px;
+  }
+
+  .about-copy {
+    order: 1;
+    text-align: center;
+  }
+
+  .about-copy p {
+    text-align: justify;
+    hyphens: auto;
+    max-width: 340px;
+    margin-inline: auto;
+  }
+}
+
+@media (max-width: 500px) {
+  .about-photo {
+    height: 235px;
+  }
+}

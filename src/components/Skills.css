@@ -1,0 +1,94 @@
+/* ==========================================================================
+   Skills
+   ========================================================================== */
+
+.skills {
+  background: var(--cream);
+  padding: 76px 0;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.skills-title {
+  letter-spacing: -0.02em;
+  font-size: clamp(1.9rem, 3.4vw, 2.75rem);
+}
+
+.skills-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.skill-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 18px;
+  border-radius: 999px;
+  background: #ffffff;
+  border: 1px solid var(--border);
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--dark);
+  text-align: center;
+}
+
+/* ==========================================================================
+   🌙 Dark Mode
+   Only changes colors.
+   Light mode remains exactly as it was.
+   ========================================================================== */
+
+.portfolio-shell.dark .skills {
+  background: #101024;
+}
+
+.portfolio-shell.dark .skills-title {
+  color: #f8f4ff;
+}
+
+.portfolio-shell.dark .skill-badge {
+  background: #1d1d42;
+  border-color: #3b3b61;
+  color: #f8f4ff;
+}
+
+.portfolio-shell.dark .skill-badge:hover {
+  background: #30305a;
+  border-color: #6d55f7;
+}
+
+
+/* ==========================================================================
+   Mobile
+   ========================================================================== */
+
+
+@media (max-width: 900px) {
+  .skills {
+    padding: 52px 0;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+@media (max-width: 599px) {
+  .skills-badges {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .skill-badge {
+    width: 100%;
+  }
+}

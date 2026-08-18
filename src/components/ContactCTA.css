@@ -1,0 +1,80 @@
+/* ==========================================================================
+   Contact CTA
+   ========================================================================== */
+
+   .contact-cta {
+  background: linear-gradient(135deg, var(--dark-2), var(--dark-3));
+  padding: 72px 0;
+}
+
+.contact-cta-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.contact-cta .section-label {
+  color: var(--purple);
+}
+
+.contact-cta-title {
+  color: #ffffff;
+  font-size: clamp(1.5rem, 2.6vw, 2.1rem);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  max-width: 46ch;
+  overflow-wrap: break-word;
+}
+
+.contact-cta-title a {
+  color: var(--purple);
+  text-decoration: underline;
+}
+/* ==========================================================================
+   🌙 Dark Mode
+   Only changes colors.
+   Light mode remains exactly as it was.
+   ========================================================================== */
+
+.portfolio-shell.dark .contact-cta {
+  background: linear-gradient(
+    135deg,
+    #1d1d36,
+    #3e3e72
+  );
+}
+
+.portfolio-shell.dark .contact-cta .section-label {
+  color: #c6c1e2;
+}
+
+.portfolio-shell.dark .contact-cta-title {
+  color: #f8f4ff;
+}
+
+.portfolio-shell.dark .contact-cta-title a {
+  color: #9b8cff;
+}
+
+/* ==========================================================================
+   Mobile
+   ========================================================================== */
+
+
+@media (max-width: 900px) {
+  .contact-cta {
+    padding: 52px 0;
+  }
+
+  .contact-cta-inner {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .contact-cta-copy {
+    width: 100%;
+  }
+}

@@ -1,0 +1,177 @@
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+
+   .footer {
+  position: relative;
+  background: var(--dark-3);
+  color: var(--cream);
+  padding: 56px 0 28px;
+}
+
+.footer-top {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+  padding-bottom: 40px;
+}
+
+.footer-heading {
+  font-size: clamp(1.5rem, 2.6vw, 2rem);
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.footer-text {
+  color: #9da6b7;
+  max-width: 46ch;
+  font-size: 0.95rem;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding-top: 28px;
+  border-top: 1px solid rgba(248, 244, 238, 0.1);
+  font-size: 0.8rem;
+}
+
+.footer-copyright {
+  color: #9da6b7;
+}
+
+.footer-links {
+  display: flex;
+  gap: 22px;
+  flex-wrap: wrap;
+}
+
+.footer-links a {
+  color: #9da6b7;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.footer-links a:hover {
+  color: var(--purple);
+}
+
+.back-to-top {
+  position: fixed;
+  right: 28px;
+  bottom: 28px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--purple);
+  color: var(--dark-3);
+  text-decoration: none;
+  font-size: 1.15rem;
+  font-weight: 700;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+  z-index: 20;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+  transition: opacity 0.3s var(--ease), transform 0.3s var(--ease), visibility 0.3s;
+  pointer-events: none;
+}
+
+.back-to-top.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* ==========================================================================
+   🌙 Dark Mode
+   Only changes colors.
+   Light mode remains exactly as it was.
+   ========================================================================== */
+
+.portfolio-shell.dark .footer {
+  background: linear-gradient(
+    135deg,
+    #111126,
+    #09091a
+  );
+
+  color: #f8f4ff;
+}
+
+.portfolio-shell.dark .footer-heading {
+  color: #f8f4ff;
+}
+
+.portfolio-shell.dark .footer-text {
+  color: #c6c1e2;
+}
+
+.portfolio-shell.dark .footer-bottom {
+  border-top-color: rgba(198, 193, 226, 0.15);
+}
+
+.portfolio-shell.dark .footer-copyright {
+  color: #aaa6c2;
+}
+
+.portfolio-shell.dark .footer-links a {
+  color: #aaa6c2;
+}
+
+.portfolio-shell.dark .footer-links a:hover {
+  color: #9b8cff;
+}
+
+.portfolio-shell.dark .back-to-top {
+  background: #6d55f7;
+  color: #ffffff;
+}
+
+
+/* ==========================================================================
+   Mobile
+   ========================================================================== */
+
+@media (max-width: 599px) {
+  .back-to-top {
+    right: 16px;
+    bottom: 16px;
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .footer {
+    padding: 44px 0 24px;
+  }
+
+  .footer-top {
+    padding-bottom: 32px;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-text {
+    text-align: justify;
+    hyphens: auto;
+    max-width: 340px;
+    margin-inline: auto;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}

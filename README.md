@@ -39,17 +39,72 @@ A modern, responsive portfolio website built with **React** and **Vite** to show
 
 ## 📁 Project Structure
 
+```text
+Portfolio-final/
+├── src/
+│   ├── assets/
+│   │   ├── certificates/
+│   │   │   ├── pyth.png
+│   │   │   └── react.png
+│   │   ├── file.png
+│   │   ├── hero.png
+│   │   ├── myPicture.png
+│   │   ├── nightPreview.png
+│   │   ├── otakulinkPreview.png
+│   │   ├── preview.png
+│   │   ├── react.svg
+│   │   └── vite.svg
+│   │
+│   ├── components/
+│   │   ├── About.css
+│   │   ├── About.jsx
+│   │   ├── Certificates.jsx
+│   │   ├── ContactCTA.css
+│   │   ├── ContactCTA.jsx
+│   │   ├── Footer.css
+│   │   ├── Footer.jsx
+│   │   ├── Hero.css
+│   │   ├── Hero.jsx
+│   │   ├── MobileMenu.css
+│   │   ├── MobileMenu.jsx
+│   │   ├── Navbar.css
+│   │   ├── Navbar.jsx
+│   │   ├── ProjectCard.jsx
+│   │   ├── Projects.css
+│   │   ├── Projects.jsx
+│   │   ├── Skills.css
+│   │   └── Skills.jsx
+│   │
+│   ├── data/
+│   │   ├── certificates.js
+│   │   ├── projects.js
+│   │   └── skills.js
+│   │
+│   ├── hooks/
+│   │   ├── useActiveSection.js
+│   │   └── useReveal.js
+│   │
+│   ├── App.css
+│   ├── App.jsx
+│   ├── index.css
+│   └── main.jsx
+│
+└── README.md
 ```
-src/
-│
-├── assets/
-│   ├── certificates/
-│   ├── hero.png
-│   ├── myPicture.png
-│
-├── App.jsx
-├── App.css
-└── main.jsx
+
+### 📂 Folder Overview
+
+| Folder        | Description                                             |
+| ------------- | ------------------------------------------------------- |
+| `assets/`     | Images, certificates, previews, and other static assets |
+| `components/` | Reusable React components and their styles              |
+| `data/`       | Project, skills, and certificate data                   |
+| `hooks/`      | Custom React hooks used throughout the portfolio        |
+| `App.jsx`     | Main application component                              |
+| `App.css`     | Application-level styling                               |
+| `index.css`   | Global CSS styles                                       |
+| `main.jsx`    | React application entry point                           |
+
 ```
 
 ---

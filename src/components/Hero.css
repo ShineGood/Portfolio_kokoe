@@ -1,0 +1,295 @@
+.hero {
+  overflow: hidden;
+   /* ⭐ CHANGED */
+   /* background: var(--cream); */
+  background: var(--bg);
+
+  transition: background 0.3s ease;
+}
+
+.hero-grid {
+  min-height: 660px;
+  display: grid;
+  grid-template-columns: 1.02fr 0.98fr;
+  align-items: center;
+  gap: 20px;
+  padding: 48px 0;
+}
+
+.hero-greeting {
+  margin: 0 0 24px;
+  font-weight: 700;
+  font-size: 1.05rem;
+  /* ⭐ CHANGED */
+  color: var(--text-h);
+  /* color: var(--dark); */
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: clamp(64px, 7vw, 98px);
+  line-height: 0.94;
+  letter-spacing: -0.05em;
+  font-weight: 700;
+  /* ⭐ CHANGED */
+  color: var(--text-h);
+
+  transition: color 0.3s ease;
+  /* color: var(--dark); */
+}
+
+.hero-role {
+  max-width: 100%;
+  width: fit-content;
+  margin: 22px 0 34px;
+  /* ⭐ CHANGED */
+  color: var(--accent);
+  /* color: var(--purple); */
+  font: 600 clamp(30px, 3.4vw, 44px) / 1.15 var(--font-script);
+  position: relative;
+  padding-bottom: 14px;
+}
+
+.hero-role::after {
+  content: '';
+  position: absolute;
+  left: 2px;
+  bottom: 0;
+  width: min(180px, 80%);
+  height: 6px;
+   /* ⭐ CHANGED
+     The old SVG had a hard-coded purple color.
+     Using a CSS gradient makes it theme-aware.
+  */
+  background: repeating-linear-gradient(
+    90deg,
+    var(--accent) 0,
+    var(--accent) 18px,
+    transparent 18px,
+    transparent 24px
+  );
+  /* background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='8' viewBox='0 0 100 8'%3E%3Cpath d='M0 5 Q 10 1, 20 5 T 40 5 T 60 5 T 80 5 T 100 5' fill='none' stroke='%238F98FF' stroke-width='2.5' stroke-linecap='round'/%3E%3C/svg%3E") repeat-x; */
+  background-size: 36px 8px;
+}
+
+.hero-text {
+  max-width: 575px;
+  margin: 0;
+  /* ⭐ CHANGED */
+  color: var(--text);
+  /* color: var(--muted); */
+  font-size: 1.05rem;
+  line-height: 1.85;
+}
+
+.hero-tagline {
+  margin-top: 10px;
+   /* ⭐ CHANGED */
+  color: var(--text);
+  /* color: var(--muted); */
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  margin-top: 36px;
+}
+
+.hero-visual {
+  align-self: stretch;
+  position: relative;
+  min-height: 560px;
+}
+
+.hero-photo {
+  position: absolute;
+  z-index: 3;
+  width: 82%;
+  height: 88%;
+  right: 0;
+  bottom: 0;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 0 0 36px 36px;
+  clip-path: polygon(8% 0, 100% 0, 100% 100%, 2% 100%, 0 16%);
+}
+
+.hero-blob {
+  position: absolute;
+  z-index: 1;
+  width: 75%;
+  aspect-ratio: 1 / 1.1;
+  right: 2%;
+  top: 10%;
+  /* ⭐ CHANGED */
+  background: var(--purple-soft);
+  border-radius: 45% 55% 52% 48% / 38% 44% 56% 62%;
+  transform: rotate(-11deg);
+
+  /* ⭐ NEW */
+  opacity: 0.9;
+}
+
+.hero-code-badge {
+  position: absolute;
+  z-index: 5;
+  left: 10%;
+  top: 18%;
+  width: 68px;
+  height: 68px;
+
+  /* ⭐ CHANGED */
+
+  border: 2px solid var(--border);
+  background: var(--panel-bg);
+  color: var(--text-h);
+  /* border: 2px solid var(--purple-soft);
+  background: rgba(255, 255, 255, 0.55); 
+  color: var(--dark);*/
+  
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  display: grid;
+  place-items: center;
+  font-size: 1.4rem;
+  font-weight: 800;
+  /* ⭐ NEW */
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    color 0.3s ease;
+}
+
+.hero-doodle {
+  position: absolute;
+  z-index: 6;
+  font: 700 50px / 1 var(--font-script);
+
+  /* ⭐ CHANGED */
+  color: var(--accent);
+  /* color: var(--purple); */
+}
+
+.hero-doodle-1 {
+  right: 1%;
+  top: 32%;
+  transform: rotate(75deg);
+}
+
+.hero-doodle-2 {
+  right: 16%;
+  top: 10%;
+}
+
+/* ==========================================================================
+   Mobile
+   ========================================================================== */
+
+
+@media (max-width: 900px) {
+  .hero-grid {
+    min-height: auto;
+    grid-template-columns: 1fr;
+    padding: 40px 0 32px;
+  }
+
+  .hero-copy {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: clamp(55px, 16vw, 78px);
+    letter-spacing: -0.045em;
+  }
+
+  .hero-role {
+    font-size: clamp(30px, 8vw, 40px);
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-role::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .hero-text {
+    font-size: 0.95rem;
+    text-align: justify;
+    hyphens: auto;
+    max-width: 340px;
+    margin-inline: auto;
+  }
+
+  .hero-actions {
+    align-items: center;
+    flex-direction: column;
+    gap: 22px;
+    width: 100%;
+  }
+
+  .hero-actions .text-link {
+    width: fit-content;
+  }
+
+  .hero-visual {
+    order: 2;
+    min-height: 0;
+    width: min(100%, 340px);
+    margin-inline: auto;
+    margin-top: 4px;
+  }
+
+  .hero-photo {
+    position: relative;
+    width: min(100%, 340px);
+    height: auto;
+    aspect-ratio: 3 / 4;
+    max-width: 100%;
+    margin-inline: auto;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+    transform: none;
+    object-position: center 20%;
+  }
+
+  .hero-blob {
+    width: 92%;
+    aspect-ratio: 1 / 1.1;
+    left: 50%;
+    right: auto;
+    top: -3%;
+    transform: translateX(-50%) rotate(-11deg);
+  }
+
+  .hero-code-badge {
+    left: -8px;
+    top: 10%;
+  }
+
+  .hero-doodle {
+    display: none;
+  }
+}
+
+@media (max-width: 599px) {
+  .hero-role {
+    font-size: 34px;
+  }
+
+  .hero-code-badge {
+    width: 54px;
+    height: 54px;
+    font-size: 1.1rem;
+  }
+}

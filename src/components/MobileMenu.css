@@ -1,0 +1,237 @@
+/* ==========================================================================
+   Theme Toggle
+   ========================================================================== */
+
+.mobile-menu-theme {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 24px;
+  padding: 5px 16px;
+  border: 1px solid rgba(30, 30, 30, 0.12);
+  border-radius: 14px;
+}
+
+.mobile-menu-theme span {
+  color: var(--dark);
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.mobile-menu-theme .theme-toggle {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 1px solid rgba(30, 30, 30, 0.12);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--dark);
+  cursor: pointer;
+  font-size: 1.05rem;
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.mobile-menu-theme .theme-toggle:hover {
+  transform: scale(1.08);
+  background: rgba(0, 0, 0, 0.05);
+}
+
+/* ==========================================================================
+   Mobile Menu
+   ========================================================================== */
+
+.mobile-menu-root {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  visibility: hidden;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.mobile-menu-root.is-open {
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.mobile-menu-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(13, 20, 32, 0.5);
+  opacity: 0;
+  transition: opacity 0.3s var(--ease);
+}
+
+.mobile-menu-root.is-open .mobile-menu-overlay {
+  opacity: 1;
+}
+
+.mobile-menu-panel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: min(430px, 100%);
+  /* ☀️ Light mode stays exactly as it was */
+  background: var(--cream-light);
+  padding: 28px 26px 36px;
+  display: flex;
+  flex-direction: column;
+  transform: translateX(100%);
+  transition: transform 0.3s var(--ease);
+}
+
+.mobile-menu-root.is-open .mobile-menu-panel {
+  transform: translateX(0);
+}
+
+.mobile-menu-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mobile-menu-close {
+  border: 0;
+  background: transparent;
+  font-size: 2.4rem;
+  line-height: 1;
+  color: var(--dark);
+}
+
+.mobile-menu-links {
+  display: grid;
+  gap: 30px;
+  margin: 70px 0 auto;
+}
+
+.mobile-menu-link {
+  position: relative;
+  display: inline-block;
+  width: fit-content;
+  text-decoration: none;
+  color: var(--dark);
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.mobile-menu-link.is-active {
+  color: var(--purple);
+}
+
+.mobile-menu-link.is-active::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 2px;
+  background: var(--purple);
+}
+
+.mobile-menu-panel .btn {
+  margin-top: 60px;
+}
+
+.mobile-menu-socials {
+  display: flex;
+  justify-content: center;
+  gap: 35px;
+  margin-top: 35px;
+  flex-wrap: wrap;
+}
+
+.mobile-menu-socials a {
+  text-decoration: none;
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-weight: 800;
+}
+
+
+/* ==========================================================================
+   🌙 Dark Mode
+   Only changes colors.
+   Light mode remains exactly as it was.
+   ========================================================================== */
+
+.portfolio-shell.dark .mobile-menu-overlay {
+  background: rgba(3, 2, 10, 0.72);
+}
+
+.portfolio-shell.dark .mobile-menu-panel {
+  background: linear-gradient(
+    135deg,
+    #14141d,
+    #0a0a18
+  );
+}
+
+.portfolio-shell.dark .mobile-menu-close {
+  color: #f8f4ff;
+}
+
+.portfolio-shell.dark .mobile-menu-link {
+  color: #f8f4ff;
+}
+
+.portfolio-shell.dark .mobile-menu-link:hover {
+  color: #9b8cff;
+}
+
+.portfolio-shell.dark .mobile-menu-link.is-active {
+  color: #9b8cff;
+}
+
+.portfolio-shell.dark .mobile-menu-link.is-active::after {
+  background: #9b8cff;
+}
+
+.portfolio-shell.dark .mobile-menu-socials a {
+  color: #c6c1e2;
+}
+
+.portfolio-shell.dark .mobile-menu-socials a:hover {
+  color: #9b8cff;
+}
+
+/* ==========================================================================
+   Theme Toggle
+   ========================================================================== */
+
+
+.portfolio-shell.dark .mobile-menu-theme {
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.portfolio-shell.dark .mobile-menu-theme span {
+  color: #f8f4ff;
+}
+
+.portfolio-shell.dark .mobile-menu-theme .theme-toggle {
+  border-color: rgba(255, 255, 255, 0.12);
+  color: #f8f4ff;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.portfolio-shell.dark .mobile-menu-theme .theme-toggle:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+
+/* ==========================================================================
+   Desktop
+   ========================================================================== */
+
+
+@media (min-width: 901px) {
+  .mobile-menu-root {
+    display: none;
+  }
+}
